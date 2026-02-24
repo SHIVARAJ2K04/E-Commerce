@@ -56,6 +56,37 @@
       .feature-box:hover {
         transform: translateY(-8px);
       }
+      .about-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-intro {
+    margin: 20px 0 40px;
+    font-size: 18px;
+    color: #555;
+}
+
+.about-grid {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-box {
+    background: white;
+    padding: 25px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.about-box:hover {
+    transform: translateY(-8px);
+}
       /* Navbar */
       nav {
         background: linear-gradient(90deg, #000000, #434343);
@@ -166,12 +197,60 @@
         color: black;
       }
 
-      /* About & Contact */
-      .center-content {
-        text-align: center;
-        max-width: 700px;
-        margin: auto;
-      }
+      .contact-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact-info {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #00cc99;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: black;
+    color: white;
+}
 
       /* Footer */
       footer {
@@ -305,26 +384,69 @@
     </section>
 
     <!-- About -->
-    <section id="about">
-      <div class="center-content">
-        <h2>About Us</h2>
-        <p>
-          Pro Sports Kit provides high quality sports equipment for all
-          athletes. We aim to deliver durable and affordable sports products for
-          cricket, football, basketball, tennis and more.
-        </p>
-      </div>
-    </section>
+<section id="about">
+<div class="about-container">
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="center-content">
-        <h2>Contact Us</h2>
-        <p>Email: prosportskit@gmail.com</p>
-        <p>Phone: +91 9876543210</p>
-        <p>Address: Chennai, Tamil Nadu</p>
-      </div>
-    </section>
+<h2>About Pro Sports Kit</h2>
+
+<p class="about-intro">
+We are passionate about delivering high-quality sports equipment 
+that helps athletes perform at their best.
+</p>
+
+<div class="about-grid">
+
+<div class="about-box">
+<h3>🏆 Our Mission</h3>
+<p>To provide durable and affordable sports gear for every athlete in India.</p>
+</div>
+
+<div class="about-box">
+<h3>🎯 Our Vision</h3>
+<p>To become the most trusted online sports store for professionals and beginners.</p>
+</div>
+
+<div class="about-box">
+<h3>🤝 Our Commitment</h3>
+<p>We ensure quality products, fast delivery, and excellent customer support.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+   <section id="contact">
+<div class="contact-container">
+
+<h2>Contact Us</h2>
+
+<div class="contact-grid">
+
+<div class="contact-info">
+<h3>📍 Our Location</h3>
+<p>Chennai, Tamil Nadu</p>
+
+<h3>📧 Email</h3>
+<p>prosportskit@gmail.com</p>
+
+<h3>📞 Phone</h3>
+<p>+91 9876543210</p>
+</div>
+
+<div class="contact-form">
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+
+</div>
+
+</div>
+</section>
 
     <footer>© 2026 Pro Sports Kit | All Rights Reserved</footer>
 
@@ -339,6 +461,10 @@
       function addToCart() {
         alert("Product added to cart!");
       }
+      function submitForm(event) {
+    event.preventDefault();
+    alert("Thank you! We will contact you soon.");
+}
     </script>
   </body>
 </html>
