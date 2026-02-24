@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Pro Sports Kit</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f4f6f9;
+      }
+      .cta-btn {
+        margin-top: 15px;
+        padding: 12px 25px;
+        border: none;
+        background: #00cc99;
+        color: black;
+        font-weight: 600;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .cta-btn:hover {
+        background: white;
+        color: black;
+      }
+
+      .features {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+
+      .feature-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 220px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-8px);
+      }
+      /* Navbar */
+      nav {
+        background: linear-gradient(90deg, #000000, #434343);
+        padding: 15px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 20px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #00ffcc;
+      }
+
+      /* Sections */
+      section {
+        display: none;
+        padding: 60px 20px;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .active {
+        display: block;
+      }
+
+      /* Hero */
+      .hero {
+        text-align: center;
+        position: relative;
+      }
+
+      .hero img {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .hero-text {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px 40px;
+        border-radius: 10px;
+      }
+
+      /* Products */
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .card h4 {
+        margin: 15px 0 5px;
+      }
+
+      .card p {
+        color: #555;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .card button {
+        background: linear-gradient(45deg, #000000, #434343);
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: 0.3s;
+      }
+
+      .card button:hover {
+        background: #00cc99;
+        color: black;
+      }
+
+      /* About & Contact */
+      .center-content {
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('products')">Products</a>
+      <a href="#" onclick="showPage('about')">About</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="active">
+      <div class="hero">
+        <img
+          src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Sports Banner"
+        />
+
+        <div class="hero-text">
+          <h1>Level Up Your Game</h1>
+          <p>Premium Sports Equipment for Every Athlete</p>
+          <button onclick="showPage('products')" class="cta-btn">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="features">
+        <div class="feature-box">
+          <h3>🚚 Free Delivery</h3>
+          <p>On orders above ₹2000</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>💳 Secure Payment</h3>
+          <p>100% Safe Transactions</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>⭐ Top Quality</h3>
+          <p>Premium Sports Brands</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <h2 style="text-align: center">Our Products</h2>
+      <div class="products">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=600"
+            alt="Cricket Bat"
+          />
+          <h4>Cricket Bat</h4>
+          <p>₹2500</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1570498839593-e565b39455fc?auto=format&fit=crop&w=600&q=80"
+            alt="Football"
+          />
+          <h4>Football</h4>
+          <p>₹1200</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80"
+            alt="Basketball"
+          />
+          <h4>Basketball</h4>
+          <p>₹1500</p>
+          <button onclick="addToCart()">Add toCart</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Tennis Racket"
+          />
+          <h4>Tennis Racket</h4>
+          <p>₹2200</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/2202685/pexels-photo-2202685.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Badminton Kit"
+          />
+          <h4>Badminton Kit</h4>
+          <p>₹1800</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=600&q=80"
+            alt="Sports Shoes"
+          />
+          <h4>Sports Shoes</h4>
+          <p>₹3000</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="center-content">
+        <h2>About Us</h2>
+        <p>
+          Pro Sports Kit provides high quality sports equipment for all
+          athletes. We aim to deliver durable and affordable sports products for
+          cricket, football, basketball, tennis and more.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="center-content">
+        <h2>Contact Us</h2>
+        <p>Email: prosportskit@gmail.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Address: Chennai, Tamil Nadu</p>
+      </div>
+    </section>
+
+    <footer>© 2026 Pro Sports Kit | All Rights Reserved</footer>
+
+    <script>
+      function showPage(pageId) {
+        document.querySelectorAll("section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(pageId).classList.add("active");
+      }
+
+      function addToCart() {
+        alert("Product added to cart!");
+      }
+    </script>
+  </body>
+</html>
